@@ -1,5 +1,6 @@
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.logevents.SelenideLogger;
+import io.qameta.allure.*;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -16,6 +17,11 @@ public class IssueTests {
 
     @Test
     @DisplayName("Чистый Selenide (с Listener)")
+    @Feature("Issue в репозитории")
+    @Story("Создание Issue")
+    @Owner("amenkova")
+    @Severity(SeverityLevel.NORMAL)
+    @Link(value = "Testing", url = "https://testing.github.com")
     public void testIssueSearch() {
         SelenideLogger.addListener("allure", new AllureSelenide());
 
@@ -32,6 +38,11 @@ public class IssueTests {
 
     @Test
     @DisplayName("Тест Лямбда шаги через step")
+    @Feature("Issue в репозитории")
+    @Story("Создание Issue")
+    @Owner("amenkova")
+    @Severity(SeverityLevel.NORMAL)
+    @Link(value = "Testing", url = "https://testing.github.com")
     public void testLambdaStep() {
         SelenideLogger.addListener("allure", new AllureSelenide());
 
@@ -56,6 +67,11 @@ public class IssueTests {
 
     @Test
     @DisplayName("Шаги с аннотацией @Step")
+    @Feature("Issue в репозитории")
+    @Story("Создание Issue")
+    @Owner("amenkova")
+    @Severity(SeverityLevel.NORMAL)
+    @Link(value = "Testing", url = "https://testing.github.com")
     public void testAnnotatedStep() {
         SelenideLogger.addListener("allure", new AllureSelenide());
         WebSteps steps = new WebSteps();
